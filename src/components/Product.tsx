@@ -1,14 +1,17 @@
-/* 
-до 18 версии такой импорт был необходим, чтобы работать с JSX
 import React from "react"
-*/
+import { IProduct } from "../models"
 
-export function Product() {
+
+interface ProductProps {
+  product: IProduct
+}
+
+export function Product(props: ProductProps) {
   return (
     <div
       className="border py-2 px-4 rounded flex flex-col items-center mb-2"
     >
-      Product!!
+      {props.product.title}
     </div>
   )
 }
